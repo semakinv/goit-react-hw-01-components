@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './social-profile.module.css';
+import styles from './TransactionHistory.module.css';
 
 function TransactionHistory({ items }) {
   return (
-    <table class="transaction-history">
+    <table className={styles.transactionHistory}>
       <thead>
         <tr>
           <th>Type</th>

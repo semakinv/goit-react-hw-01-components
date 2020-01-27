@@ -1,40 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './social-profile.module.css';
+import styles from './Profile.module.css';
 
 function Profile({ name, tag, location, avatar, stats }) {
   const { followers, views, likes } = stats;
+  const { profile, description, label, quantity } = styles;
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="user avatar" class="avatar" />
-        <p class="name">{name}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+    <div className={profile}>
+      <div className={description}>
+        <img src={avatar} alt="user avatar" className={styles.avatar} />
+        <p className={styles.name}>{name}</p>
+        <p className={styles.tag}>@{tag}</p>
+        <p className={styles.location}>{location}</p>
       </div>
 
-      <ul class="stats">
+      <ul className={styles.stats}>
         <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
+          <span className={label}>Followers</span>
+          <span className={quantity}>{followers}</span>
         </li>
         <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
+          <span className={label}>Views</span>
+          <span className={quantity}>{views}</span>
         </li>
         <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
+          <span className={label}>Likes</span>
+          <span className={quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
 }
-
-// Profile.defaultProps = {
-//   tag: 'unknown tag',
-//   location: 'unknown location',
-// };
 
 Profile.propTypes = {
   name: PropTypes.string.isRequired,

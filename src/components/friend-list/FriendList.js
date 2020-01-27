@@ -1,18 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './social-profile.module.css';
+import styled from 'styled-components';
+import styles from './FriendList.module.css';
 
+const { item, status } = styles;
+const Status = styled.span`
+  background-color: ${props => (props.statusValue ? 'green' : 'red')};
+`;
 const FriendListItem = ({ name, isOnline, avatar }) => (
-  <li class="item">
-    <span class="status">{isOnline ? 'online' : 'offline'}</span>
-    <img class="avatar" src={avatar} alt="" width="48" />
-    <p class="name">{name}</p>
+  <li className={item}>
+    <Status className={status} statusValue={isOnline}>
+      {' '}
+    </Status>
+    <img className={styles.avatar} src={avatar} alt="" width="48" />
+    <p className={styles.name}>{name}</p>
   </li>
 );
 
 function FriendList({ friends }) {
   return (
-    <ul class="friend-list">
+    <ul className="friend-list">
       {friends.map(friend => (
         <FriendListItem {...friend} key={friend.id} />
       ))}
