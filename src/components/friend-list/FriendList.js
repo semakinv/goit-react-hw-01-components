@@ -1,25 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import styles from './FriendList.module.css';
-
-const { item, status } = styles;
-const Status = styled.span`
-  background-color: ${props => (props.statusValue ? 'green' : 'red')};
-`;
-const FriendListItem = ({ name, isOnline, avatar }) => (
-  <li className={item}>
-    <Status className={status} statusValue={isOnline}>
-      {' '}
-    </Status>
-    <img className={styles.avatar} src={avatar} alt="" width="48" />
-    <p className={styles.name}>{name}</p>
-  </li>
-);
+import FriendListItem from './FriendListItem';
 
 function FriendList({ friends }) {
   return (
-    <ul className="friend-list">
+    <ul>
       {friends.map(friend => (
         <FriendListItem {...friend} key={friend.id} />
       ))}
@@ -36,12 +21,6 @@ FriendList.propTypes = {
       id: PropTypes.number.isRequired,
     }),
   ).isRequired,
-};
-
-FriendListItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-  avatar: PropTypes.string.isRequired,
 };
 
 export default FriendList;

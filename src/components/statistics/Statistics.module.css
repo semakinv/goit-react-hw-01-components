@@ -8,25 +8,6 @@
   margin-right: auto;
   margin-bottom: 10px;
 }
-.percentage {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.label {
-  font-size: 12px;
-  font-weight: 300;
-}
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  width: 250px;
-  height: 60px;
-  font-family: sans-serif;
-}
 
 .statTitle {
   display: flex;
@@ -37,9 +18,4 @@
   font-family: sans-serif;
   font-weight: 600;
   background-color: white;
-}
-.statList {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
 }
